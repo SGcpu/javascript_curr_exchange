@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #bde0fe;
+}
+.headingbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#amt_text{
+    height: 1.5rem;
+    text-align: center;
+}
+#amt_inp{
+    border-radius: 2rem;
+    padding: 1rem;
+}
+.amount{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2vh ;
+    width: 100%;
+}
+.exchange{
+    display: flex;
+    padding: 2rem;
+    background-color: #fff;
+    min-height: 50vh;
+    min-width: 50vh;
+    border-radius: 2rem;
+}
+.exchange_container{
+    display: flex;
+    gap: 5vh;
+    padding: 10vh;
+}
+.exchange_container h3{
+    text-align: center;
+}
+.select select{
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+.final_msg{
+    padding: 1rem;
+    text-align: center;
+}
+#btn_exchange button{
+    padding: 2vh;
+    border-radius: 2rem;
+    background-color: aqua;
+    width: 100%;
+    cursor: pointer;
+}
