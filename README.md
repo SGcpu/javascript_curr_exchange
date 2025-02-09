@@ -69,7 +69,7 @@ const updateExchangeRate = async () => {
 
 ## 📬 Contact
 For any issues or suggestions, feel free to reach out:
-- 🐙 GitHub: SGcpu(https://github.com/SGcpu)
+- 🐙 GitHub: [SGcpu](https://github.com/SGcpu)
 
 ---
 
