@@ -1,22 +1,14 @@
 import countryList from "./countrycodes.js";
 
-const BASE_URL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
+const BASE_URL = "https://v6.exchangerate-api.com/v6/e61312ef945aa66bab81fef2/latest";
 
 const dropdowns = document.querySelectorAll(".select select");
-
 let leftflag = document.querySelector("#leftflag");
-
 let rightflag = document.querySelector("#rightflag");
-
 let exch_button = document.querySelector("#btn_exchange");
-
 let final_msg = document.querySelector(".final_msg");
-
 let fromCurr = document.querySelector(".from_container select");
-
 let toCurr = document.querySelector(".to_container select");
-
-
 
 for (let select of dropdowns) {
     for (let currCode in countryList) {
@@ -46,10 +38,12 @@ const updateFlag = (element) => {
         rightflag.innerHTML = `<img src="https://flagsapi.com/${countryCodeR}/flat/64.png">`
     }
 }
+
 exch_button.addEventListener("click", (evt) => {
     evt.preventDefault();
     updateExchangeRate();
 })
+
 const updateExchangeRate = async () => {
     let amount = document.querySelector(".amount input");
     let amtVal = amount.value;
@@ -58,17 +52,16 @@ const updateExchangeRate = async () => {
         amount.value = "1";
     }
 
-    const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`
-    //final_msg.innerHTML = `<p>1${countryCodeL} = 80${countryCodeR}</p>`
+    const URL = `${BASE_URL}/${fromCurr.value}`;
     let response = await fetch(URL);
-    console.log(response);
-    let data = response.json;
-    let rate = data[toCurr.value.toLowerCase()];
-    console.log(rate);
+    let data = await response.json();
+    let rate = data.conversion_rates[toCurr.value];
 
-    let finalAmount = amtVal * rate;
+    let finalAmount = (amtVal * rate).toFixed(2);
     final_msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
 }
+
 window.addEventListener("load", () => {
     updateExchangeRate();
 });
+amount.addEventListener("input", updateExchangeRate);
