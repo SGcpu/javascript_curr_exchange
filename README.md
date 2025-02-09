@@ -69,8 +69,7 @@ const updateExchangeRate = async () => {
 
 ## 📬 Contact
 For any issues or suggestions, feel free to reach out:
-- 📧 Email: your-email@example.com
-- 🐙 GitHub: [your-username](https://github.com/SG_cpu)
+- 🐙 GitHub: SGcpu(https://github.com/SGcpu)
 
 ---
 
